@@ -60,11 +60,11 @@ const ChatOllama = () => {
       setIsLoading(true);
       controllerRef.current = new AbortController();
 
-      const response = await fetch('https://pontsgpt.enpc.org/api/chat', {
+      const response = await fetch('http://localhost:11434/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'deepseek-r1:32b',
+          model: 'mistral-small:latest',
           messages: chatHistory,
           stream: true,
           options: {
